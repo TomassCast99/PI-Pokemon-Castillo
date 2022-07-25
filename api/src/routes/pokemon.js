@@ -36,14 +36,9 @@ router.post("/", async (req, res) => {
       return res.status(400).send("El nombre ya esta en uso");
     }
 
-    let postTypes = await Type.findAll({
-      where: { name: name },
-      attribute: ["name"],
-      through: {
-        type: [],
-      },
-    });
-    console.log(postTypes.data);
+    let postTypes = await Type.findAll({ where: { name: type } });
+
+    console.log("aca postTy", postTypes.data);
     if (postTypes.length === 0) {
       return res.status(400).send("Se debe ingresar un tipo valido");
     }
@@ -63,7 +58,7 @@ router.post("/", async (req, res) => {
       createdDB,
     });
 
-    createPoke.addType(types);
+    createPoke.addType(postTypes);
 
     res.send("El pokemon fue creado con exito");
   } catch (error) {

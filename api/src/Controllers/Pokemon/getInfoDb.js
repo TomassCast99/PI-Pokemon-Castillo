@@ -6,7 +6,7 @@ const getInfoDB = async () => {
       model: Type,
       attribute: ["name"],
       through: {
-        attributes: [],
+        types: [],
       },
     },
   });
