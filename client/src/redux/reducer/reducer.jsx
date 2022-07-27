@@ -81,19 +81,18 @@ export default function reducer(state = initialState, { type, payload }) {
       };
 
     case "HANDLE_FILTERS":
-      let pokemons2 = state.pokemons2;
-      const { origin } = payload;
+      let pokemons3 = state.pokemons2;
 
-      if (origin === "apiPoke") {
-        pokemons2 = pokemons2.filter((pokemons) => !pokemons.createdDB);
+      if (payload === "apiPoke") {
+        pokemons3 = pokemons3.filter((pokemon) => !pokemon.createdDB);
       }
-      if (origin === "dbPoke") {
-        pokemons2 = pokemons2.filter((pokemons) => pokemons.createdDB);
+      if (payload === "dbPoke") {
+        pokemons3 = pokemons3.filter((pokemon) => pokemon.createdDB);
       }
 
       return {
         ...state,
-        pokemons: pokemons2,
+        pokemons: pokemons3,
       };
 
     case "HANDLER_STRENGTH":

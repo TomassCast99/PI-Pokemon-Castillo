@@ -28,7 +28,7 @@ export default function Home() {
 
   const [act, setAct] = useState("");
   const [type, setTypes] = useState("All");
-  const [origin, setOrigin] = useState("All");
+  const [origin, setOrigin] = useState("");
 
   const [charge, setCharge] = useState(false); //para cuando busca por un pokemon que no tiene tipo entre los 40 traidos
 
@@ -76,7 +76,9 @@ export default function Home() {
 
   function handleClickFilter(e) {
     e.preventDefault();
-    dispatch(handleFilter({ origin }));
+    dispatch(handleFilter(e.target.value));
+    setCurrentPage(1);
+    setAct(`${e.target.value}`);
   }
 
   function HandleFilterByStrength(e) {
@@ -127,16 +129,16 @@ export default function Home() {
           <div>
             <select
               className="name-filt"
-              value={origin}
+              // value={origin}
               onChange={(e) => handleClickFilter(e)}
             >
               <option key="All" className="nav-links" value="All">
                 All
               </option>
-              <option key="apiPoke" className="nav-links" value="apiPoke">
+              <option key="apiPok" className="nav-links" value="apiPoke">
                 Pokémons
               </option>
-              <option key="dbPoke" className="nav-links" value="dbPoke">
+              <option key="dbPok" className="nav-links" value="dbPoke">
                 Created Pokémon
               </option>
             </select>
