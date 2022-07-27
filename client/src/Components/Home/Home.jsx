@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import Loader from "../Loader/Loader";
 import Paginated from "../Paginated/Paginated";
 import Navbar from "../Navbar/Navbar";
-//import "./Home.css";
+import "./Home.css";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -69,7 +69,7 @@ export default function Home() {
 
   function handleClick(e) {
     setTypes("All Pokes");
-    setStrength("all");
+    setStrength("asc");
     setOrigin("All");
     dispatch(getPokes());
   }
@@ -150,9 +150,6 @@ export default function Home() {
                 HandleFilterByStrength(e);
               }}
             >
-              <option key="all" value="all">
-                All
-              </option>
               <option key="asc" value="asc">
                 High Strength
               </option>

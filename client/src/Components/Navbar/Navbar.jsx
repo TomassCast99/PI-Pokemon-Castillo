@@ -10,7 +10,7 @@ export default function Navbar({ setCurrentPage }) {
       <Link to="/">
         <button className="log-out">Log Out</button>
       </Link>
-      <div className="tittle2">Pokémry</div>
+      <div className="tittle2">Pokénry</div>
       <Search setCurrentPage={setCurrentPage} />
       <Link to={"/pokemon"}>
         <button className="create-poke">Create Pokémon</button>

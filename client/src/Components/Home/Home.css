@@ -1,0 +1,101 @@
+.card-poke {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+
+    
+.div-filt{
+    display: flex;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: 0px;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin-top: 25px;
+margin-bottom: 50px;
+justify-content: space-around;
+}  
+
+.div-buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 30px;
+} 
+
+.Loader{
+justify-content: center;
+}
+
+.home-container{
+    /* background-image: url(pattern-randomized.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 170vh;
+}
+
+.home-btn{
+        background-color: transparent;
+        border: 2px solid #eb5e28;
+        color:#e5e5e5;
+        padding: 8px 20px;
+        border-radius: 15px;
+        outline: none;
+        cursor: pointer;
+        font-size: 20px;
+    
+    }
+
+.home-btn:hover {
+    background-color: #eb5e28;
+    color:#e5e5e5;
+    transition: all 0.3 ease-out;
+}
+
+.btn-filtros{
+    background-color: transparent;
+    border: 2px solid #eb5e28;
+    color:#e5e5e5;
+    padding: 8px 20px;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.btn-filtros:hover {
+background-color: #eb5e28;
+color:#e5e5e5;
+transition: all 0.3 ease-out;
+}
+
+.name-filt{
+    color: #e5e5e5;
+    background: #747474a4;;
+    border: 2px solid #eb5e28;
+    border-radius: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.div-not-found{
+    border: 2px solid #eb5e28;
+    border-radius: 35px;
+    width: 250px;
+    height: 150px;
+    margin: 30px;
+    background-color: rgba(201, 192, 192, 0.856);
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    color:  #1a1b1b;
+}

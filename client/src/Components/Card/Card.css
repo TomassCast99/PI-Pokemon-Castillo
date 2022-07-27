@@ -1,0 +1,70 @@
+.card {
+    width: 190px;
+    height: 254px;
+    border-radius: 20px;
+    background: #747474a4;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #272727;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 10px;
+   }
+   
+   .card-details {
+    color: black;
+    height: 100%;
+    gap: 5px;
+    display: grid;
+    place-content: center;
+   }
+   .card-details img{
+    width: 100px;
+    height: 100px;
+}
+
+.img-game{
+    margin: 0 auto;
+    margin-top: 10px;
+    align-items: center;
+}
+
+   .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #eb5e28;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+
+   
+   .text-body {
+    color: rgba(222, 218, 218, 0.767);
+   }
+   
+   /*Text*/
+   .text-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(222, 218, 218, 0.767)
+   }
+   
+   /*Hover*/
+   .card:hover {
+    border-color: #eb5e28;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }

@@ -92,7 +92,6 @@ export const handlerStrength = (payload) => {
 
 export const handlerTypes = (payload) => {
   // este payload representa el valor de input, es decir el valor de nuestro select
-  console.log("aca action", payload);
   return {
     type: "HANDLER_TYPES",
     payload: payload,

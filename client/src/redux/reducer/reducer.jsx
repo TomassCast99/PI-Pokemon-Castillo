@@ -126,8 +126,7 @@ export default function reducer(state = initialState, { type, payload }) {
       let generos =
         payload === "all"
           ? state.pokemons2
-          : state.pokemons2?.filter((e) => e.types?.includes(payload));
-      console.log("aca generos red", generos);
+          : state.pokemons2?.filter((e) => e.type?.includes(payload));
       return {
         ...state,
         pokemons: generos,
