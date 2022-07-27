@@ -1,0 +1,56 @@
+.nav-container {
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, .4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);  
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.tittle2{
+    color: #eb5e28;
+    font-size: 47px;
+}
+
+.log-out, .create-poke {
+    border-radius: 35px;
+    border-color: #403d39;
+    list-style: none;
+    color:#252422;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding: 12px 16px;
+    margin: 0 8px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap; 
+    padding: 8px 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #eb5e28;
+}
+
+
+.log-out::before, .create-poke::before {
+    content: " ";
+    position: absolute;
+    border-radius: 35px;
+    top: 0;
+    left:0;
+    height:100%;
+    width: 100%;
+    z-index:-1;
+    transition: .2s;
+}
+.log-out:hover, .create-poke:hover {
+    border-color: #252422;
+    box-shadow: 0px 3px 20px 0px black;
+    transform: scale(1.2);
+    background-color: #eb5e28;
+    color:#e5e5e5;
+    transition: all 0.3 ease-out;
+}

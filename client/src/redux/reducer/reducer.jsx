@@ -53,27 +53,27 @@ export default function reducer(state = initialState, { type, payload }) {
     case "HANDLER_NAME":
       let sortAlf;
       if (payload === "asc") {
-        sortAlf = state.pokemons.sort((a, b) => {
+        sortAlf = state.pokemons2.sort((a, b) => {
           if (a.name.charAt(0) > b.name.charAt(0)) {
-            return 1;
+            return -1;
           }
           if (a.name.charAt(0) < b.name.charAt(0)) {
-            return -1;
+            return 1;
           }
           return 0;
         });
       } else if (payload === "desc") {
-        sortAlf = state.pokemons.sort((a, b) => {
+        sortAlf = state.pokemons2.sort((a, b) => {
           if (a.name.charAt(0) > b.name.charAt(0)) {
-            return -1;
+            return 1;
           }
           if (a.name.charAt(0) < b.name.charAt(0)) {
-            return 1;
+            return -1;
           }
           return 0;
         });
       } else {
-        sortAlf = state.pokemons;
+        sortAlf = state.pokemons2;
       }
       return {
         ...state,
@@ -84,10 +84,10 @@ export default function reducer(state = initialState, { type, payload }) {
       let pokemons2 = state.pokemons2;
       const { origin } = payload;
 
-      if (origin === "apiPokemons") {
+      if (origin === "apiPoke") {
         pokemons2 = pokemons2.filter((pokemons) => !pokemons.createdDB);
       }
-      if (origin === "dbPokemons") {
+      if (origin === "dbPoke") {
         pokemons2 = pokemons2.filter((pokemons) => pokemons.createdDB);
       }
 
@@ -98,8 +98,8 @@ export default function reducer(state = initialState, { type, payload }) {
 
     case "HANDLER_STRENGTH":
       let strength =
-        payload === "desc"
-          ? state.pokemons.sort(function (a, b) {
+        payload === "asc"
+          ? state.pokemons2.sort(function (a, b) {
               if (a.strength > b.strength) {
                 return 1;
               }
@@ -108,7 +108,7 @@ export default function reducer(state = initialState, { type, payload }) {
               }
               return 0;
             })
-          : state.pokemons.sort(function (a, b) {
+          : state.pokemons2.sort(function (a, b) {
               if (a.strength > b.strength) {
                 return -1;
               }
@@ -126,7 +126,8 @@ export default function reducer(state = initialState, { type, payload }) {
       let generos =
         payload === "all"
           ? state.pokemons2
-          : state.pokemons2.filter((e) => e.types.includes(payload));
+          : state.pokemons2?.filter((e) => e.types?.includes(payload));
+      console.log("aca generos red", generos);
       return {
         ...state,
         pokemons: generos,
