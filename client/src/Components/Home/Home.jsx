@@ -27,8 +27,7 @@ export default function Home() {
   const [range, setRange] = useState({ first: 0, last: 12 });
 
   const [act, setAct] = useState("");
-  const [type, setTypes] = useState("All");
-  const [origin, setOrigin] = useState("");
+  const [types, setTypes] = useState("All");
 
   const [charge, setCharge] = useState(false); //para cuando busca por un pokemon que no tiene tipo entre los 40 traidos
 
@@ -70,7 +69,6 @@ export default function Home() {
   function handleClick(e) {
     setTypes("All Pokes");
     setStrength("asc");
-    setOrigin("All");
     dispatch(getPokes());
   }
 
@@ -129,7 +127,6 @@ export default function Home() {
           <div>
             <select
               className="name-filt"
-              // value={origin}
               onChange={(e) => handleClickFilter(e)}
             >
               <option key="All" className="nav-links" value="All">
@@ -163,7 +160,7 @@ export default function Home() {
 
           <div className="box">
             <select
-              value={type}
+              value={types}
               className="name-filt"
               onChange={(e) => {
                 HandleFilterByType(e);
@@ -214,7 +211,7 @@ export default function Home() {
                   id={d.id}
                   name={d.name}
                   img={d.img}
-                  type={d.type}
+                  types={d.types}
                 />
               );
             })

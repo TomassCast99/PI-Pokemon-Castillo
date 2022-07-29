@@ -3,18 +3,8 @@ const { Pokemon, Type } = require("../db");
 const router = Router();
 
 router.post("/", async (req, res) => {
-  let {
-    name,
-    img,
-    hp,
-    strength,
-    defense,
-    speed,
-    height,
-    weight,
-    type,
-    createdDB,
-  } = req.body;
+  let { name, img, hp, strength, defense, speed, height, weight, types } =
+    req.body;
 
   try {
     if (
@@ -25,42 +15,39 @@ router.post("/", async (req, res) => {
       !speed ||
       !height ||
       !weight ||
-      !type
+      !types
     ) {
       return res.status(400).send("Faltan parametros");
     }
-    console.log(type);
 
-    const findPokemon = await Pokemon.findAll({ where: { name: name } });
-    if (findPokemon.length != 0) {
+    const findPokemon = await Pokemon.findOne({ where: { name: name } });
+    if (findPokemon) {
       return res.status(400).send("El nombre ya esta en uso");
-    }
-
-    let postTypes = await Type.findAll({ where: { name: type } });
-
-    console.log("aca postTy", postTypes.data);
-    if (postTypes.length === 0) {
-      return res.status(400).send("Se debe ingresar un tipo valido");
     }
 
     let id = Math.floor(Math.random() * 1234567);
 
-    let createPoke = await Pokemon.create({
-      id: id,
-      img,
-      name,
-      hp,
-      strength,
-      defense,
-      speed,
-      height,
-      weight,
-      createdDB,
+    let [createPoke, exist] = await Pokemon.findOrCreate({
+      where: {
+        id: id,
+        img,
+        name,
+        hp,
+        strength,
+        defense,
+        speed,
+        height,
+        weight,
+        createdDB: true,
+      },
     });
 
-    createPoke.addType(postTypes);
+    types.forEach(async (t) => {
+      let postTypes = await Type.findOne({ where: { name: t } });
+      await createPoke.addType(postTypes);
+    });
 
-    res.send("El pokemon fue creado con exito");
+    res.json(createPoke);
   } catch (error) {
     console.log(error);
   }

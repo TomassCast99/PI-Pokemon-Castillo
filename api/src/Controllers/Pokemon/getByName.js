@@ -8,7 +8,7 @@ const getByName = async (name) => {
       include: {
         model: Type,
         attributes: ["name"],
-        through: { type: [] },
+        through: { types: [] },
       },
     });
     if (nameDb) {
@@ -29,7 +29,7 @@ const getByName = async (name) => {
         speed: r.stats[5].base_stat,
         height: r.height,
         weight: r.weight,
-        type: r.types.map((el) => el.type.name),
+        types: r.types.map((el) => el.type.name),
       };
       console.log(pokeName);
       return pokeName;

@@ -10,7 +10,8 @@ export default function Detail() {
   const { id } = useParams();
   const pokeDetail = useSelector((state) => state.detail);
   const dispatch = useDispatch();
-  console.log(pokeDetail);
+
+  console.log(pokeDetail.types);
 
   useEffect(() => {
     dispatch(getDetail(id));
@@ -60,21 +61,12 @@ export default function Detail() {
             <h1>{pokeDetail.name.toUpperCase()}</h1>
           </div>
           <div className="base3">
-            {pokeDetail.type ? (
-              <h2>
-                Type:
-                {pokeDetail.type.map(
-                  (e) => " " + e.charAt(0).toUpperCase() + e.slice(1) + " "
-                )}
-              </h2>
-            ) : (
-              <h2>
-                Type:
-                {pokeDetail.types.map(
-                  (e) => " " + e.charAt(0).toUpperCase() + e.slice(1) + " "
-                )}
-              </h2>
-            )}
+            <h4>
+              Types:{" "}
+              {pokeDetail.types.map((e) => {
+                return <h3 key={e}>{e}</h3>;
+              })}
+            </h4>
           </div>
           <div className="base3">
             <h2>HP: {pokeDetail.hp}</h2>
@@ -83,7 +75,7 @@ export default function Detail() {
             <h2>Speed: {pokeDetail.speed}</h2>
           </div>
           <div className="base3">
-            <h2>Heigh: {pokeDetail.height}</h2>
+            <h2>Height: {pokeDetail.height}</h2>
           </div>
           <div className="base3">
             <h2>Weight: {pokeDetail.weight} </h2>
