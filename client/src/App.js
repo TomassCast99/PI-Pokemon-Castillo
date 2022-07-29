@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import "./App.css";
 import Landing from "./Components/Landing/Landing";
 import Home from "../src/Components/Home/Home";
-// import GameCreate from "./Components/Create/GameCreate";
 import Details from "./Components/Details/Details";
+import CreatePoke from "./Components/Create/CreatePoke";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/videogame" element={<GameCreate />} />*/}
+          <Route path="/pokemon" element={<CreatePoke />} />
           <Route path="/pokemons/:id" element={<Details />} />
         </Routes>
       </div>

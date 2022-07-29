@@ -196,6 +196,7 @@ export default function Home() {
           pokesPerPage={pokesPerPage}
           usePoke={usePoke.length}
           paginated={paginado}
+          currentPage={currentPage}
         />
 
         <div className="card-poke">

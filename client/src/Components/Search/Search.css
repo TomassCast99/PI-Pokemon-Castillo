@@ -3,7 +3,8 @@
    }
    
    .input {
-    font-size: 16px;
+    font-family: 'TTVTechPrecomput', sans-serif;
+    font-size: 30px;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 200px;

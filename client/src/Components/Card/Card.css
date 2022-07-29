@@ -8,7 +8,8 @@
     border: 2px solid #272727;
     transition: 0.5s ease-out;
     overflow: visible;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'TTVTechPrecomput', sans-serif;
+    font-size: 30px;
     margin: 10px;
    }
    
@@ -53,7 +54,7 @@
    
    /*Text*/
    .text-title {
-    font-size: 15px;
+    font-size: 30px;
     font-weight: bold;
     color: rgba(222, 218, 218, 0.767)
    }

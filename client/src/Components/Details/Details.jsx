@@ -61,12 +61,14 @@ export default function Detail() {
             <h1>{pokeDetail.name.toUpperCase()}</h1>
           </div>
           <div className="base3">
-            <h4>
+            <h1>
               Types:{" "}
               {pokeDetail.types.map((e) => {
-                return <h3 key={e}>{e}</h3>;
+                return (
+                  <p key={e}>{e.charAt(0).toUpperCase() + e.slice(1) + " "}</p>
+                );
               })}
-            </h4>
+            </h1>
           </div>
           <div className="base3">
             <h2>HP: {pokeDetail.hp}</h2>
