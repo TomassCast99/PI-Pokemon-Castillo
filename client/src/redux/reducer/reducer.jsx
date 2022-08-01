@@ -82,11 +82,13 @@ export default function reducer(state = initialState, { type, payload }) {
 
     case "HANDLE_FILTERS":
       let pokemons3 = state.pokemons2;
+      let origin = payload;
 
-      if (payload === "apiPoke") {
+      if (origin === "apiPoke") {
         pokemons3 = pokemons3.filter((pokemon) => !pokemon.createdDB);
       }
-      if (payload === "dbPoke") {
+
+      if (origin === "dbPoke") {
         pokemons3 = pokemons3.filter((pokemon) => pokemon.createdDB);
       }
 

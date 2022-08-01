@@ -1,7 +1,7 @@
 .paginado2{
     font-family: 'TTVTechPrecomput', sans-serif;
     display: flex;
-    /* //background-image: url(); */
+    background-image: url(bosque.jpeg); 
     background-position: center;
     background-size: cover; 
     height: 100vh;

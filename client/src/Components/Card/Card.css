@@ -16,13 +16,13 @@
    .card-details {
     color: black;
     height: 100%;
-    gap: 5px;
     display: grid;
     place-content: center;
    }
+
    .card-details img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 .img-game{

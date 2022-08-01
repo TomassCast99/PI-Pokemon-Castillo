@@ -29,6 +29,7 @@ const getInfoDB = async () => {
         height: dbData[i].height,
         weight: dbData[i].weight,
         types: tipos,
+        createdDB: true,
       };
       poke.push(newPoke);
     }

@@ -7,9 +7,7 @@ router.get("/", async (req, res) => {
   const { name } = req.query;
   try {
     if (name) {
-      console.log(name);
       const byName = await getByName(name);
-      console.log(byName);
       res.json([byName]);
     } else {
       const allPoke = await allInfo();

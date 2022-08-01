@@ -43,6 +43,7 @@ export default function CreatePoke() {
   }, [dispatch]);
 
   function handleSubmit(e) {
+    e.preventDefault();
     const a = allPokes.filter((b) => b.name === input.name);
     if (a.length > 0) {
       return alert("There is a pokémon with that name, try another");
@@ -71,7 +72,8 @@ export default function CreatePoke() {
       };
 
       dispatch(postPoke(crear));
-      setLoading(false);
+
+      // setLoading(false);
       setResponse(true);
 
       setTimeout(() => setResponse(false), 4000);
@@ -89,9 +91,10 @@ export default function CreatePoke() {
       });
     } else {
       setErr(true);
-      setLoading(false);
+      //setLoading(false);
     }
   }
+
   function handelChange(e) {
     setInput({
       ...input,
@@ -106,12 +109,21 @@ export default function CreatePoke() {
   }
 
   function handleSelectTypes(e) {
-    if (!input.types.includes(e.target.value)) {
+    const { value } = e.target;
+    if (input.types.includes(value))
+      return alert("You've already selected that temperament");
+    if (input.types.length < 6) {
       setInput({
         ...input,
-        types: [...input.types, e.target.value],
+        types: [...input.types, value],
       });
-    }
+      setErrors(
+        validation({
+          ...input,
+          types: [...input.types, value],
+        })
+      );
+    } else alert("You've reached the max amount of temperaments");
   }
 
   function handleDelete(e) {
@@ -213,12 +225,12 @@ export default function CreatePoke() {
           <strong>{errors.hp}</strong>
         </div>
         <div>
-          <label key="height" className="title5">
+          <label key="height2" className="title5">
             Height:
           </label>
           <input
             type="number"
-            name="height2"
+            name="height"
             key="height3"
             placeholder="Height"
             value={input.height}
@@ -228,12 +240,12 @@ export default function CreatePoke() {
           <strong>{errors.height}</strong>
         </div>
         <div>
-          <label key="weight" className="title5">
+          <label key="weight2" className="title5">
             Weight:
           </label>
           <input
             type="number"
-            name="weight2"
+            name="weight"
             key="weight3"
             placeholder="Weight"
             value={input.weight}
@@ -243,12 +255,12 @@ export default function CreatePoke() {
           <strong>{errors.weight}</strong>
         </div>
         <div>
-          <label key="speed" className="title5">
+          <label key="speed2" className="title5">
             Speed:
           </label>
           <input
             type="number"
-            name="speed2"
+            name="speed"
             key="speed3"
             placeholder="Speed"
             value={input.speed}
@@ -263,16 +275,16 @@ export default function CreatePoke() {
             Types:{" "}
           </label>
           <select
-            key="types2"
+            key="genres2"
             className="boton6"
             onChange={(e) => handleSelectTypes(e)}
           >
             {allTypes &&
               allTypes
                 .sort((a, b) => (a.name > b.name ? 1 : -1))
-                .map((t) => (
-                  <option key={t.id} value={t.name}>
-                    {t.name.toUpperCase()}
+                .map((e) => (
+                  <option key={e.id} value={e.name}>
+                    {e.name.toUpperCase()}
                   </option>
                 ))}
           </select>
@@ -281,19 +293,19 @@ export default function CreatePoke() {
             {!input.types.length ? (
               <strong>{errors.types}</strong>
             ) : (
-              input.types.map((nombre, i) => {
+              input.types.map((value, i) => {
                 return (
                   <div key={i} className="card98">
                     <button
                       onClick={handleDelete}
-                      value={nombre}
+                      value={value}
                       className="cross"
                       key="botonX"
                     >
                       X
                     </button>
                     <span key="poke" className="pokeName">
-                      {nombre}
+                      {value.toUpperCase()}
                     </span>
                   </div>
                 );

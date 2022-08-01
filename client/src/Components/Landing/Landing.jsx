@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import "./landing.css";
+import "./Landing.css";
+import logoLand from "../poke media.png";
 
 export default function LandingPage() {
   return (
     <div className="container">
-      <h1 className="tittle">¡Welcome to Pokénry!</h1>
-      <h2 className="sub-tittle">This is a website for Gamers</h2>
-      <p className="content">
-        ¡You can find and view the most popular games in the world!
-      </p>
+      <h1 className="tittle">Welcome to...</h1>
+      <div className="tittle2">
+        <img src={logoLand} alt="logoLand" className="logoLand"></img>
+      </div>
+      <p className="content">¡You have to be the very best!</p>
       <Link to="/home">
         <button className="btn-land"> Gotta catch'em all! </button>
       </Link>

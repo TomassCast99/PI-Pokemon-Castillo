@@ -6,6 +6,8 @@ router.post("/", async (req, res) => {
   let { name, img, hp, strength, defense, speed, height, weight, types } =
     req.body;
 
+  let tiposEnArray = types.split(", ");
+
   try {
     if (
       !name ||
@@ -38,12 +40,11 @@ router.post("/", async (req, res) => {
         speed,
         height,
         weight,
-        createdDB: true,
       },
     });
 
-    types.forEach(async (t) => {
-      let postTypes = await Type.findOne({ where: { name: t } });
+    tiposEnArray.forEach(async (t) => {
+      let postTypes = await Type.findAll({ where: { name: t } });
       await createPoke.addType(postTypes);
     });
 

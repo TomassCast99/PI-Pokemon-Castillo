@@ -11,8 +11,6 @@ export default function Detail() {
   const pokeDetail = useSelector((state) => state.detail);
   const dispatch = useDispatch();
 
-  console.log(pokeDetail.types);
-
   useEffect(() => {
     dispatch(getDetail(id));
     return () => {
@@ -21,6 +19,8 @@ export default function Detail() {
   }, [dispatch, id]);
 
   if (Object.keys(pokeDetail).length === 0) {
+    console.log(pokeDetail.types);
+
     return (
       <div
         style={{

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 import imagenPoke from "../pokemon.jpg";
 
-export default function Card({ id, types, name, img, createdDB }) {
+export default function Card({ id, types, name, img }) {
   return (
     <div className="card">
       <div className="card-details">

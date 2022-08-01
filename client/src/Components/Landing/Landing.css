@@ -2,21 +2,20 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    /* background-image: url(pattern-randomized12.png); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
     height: 100vh;
     text-shadow: rgb(26, 25, 25) 0.1em 0.1em 0.2em;
-    font-size: 30px;
+    font-size: 50px;
 }
+
+.logoLand{
+    width: 700px ;
+}
+
 
 .tittle{
-    font-family: 'TTVTechPrecomput', sans-serif; 
-    color: #d45929;;
-}
-
-.sub-tittle{
     font-family: 'TTVTechPrecomput', sans-serif; 
     color: #d45929;;
 }
@@ -42,7 +41,7 @@
         outline: none;
         border: none;
         cursor: pointer;
-        font-size: 30px;
+        font-size: 40px;
         background-color: #eb5e28;
     }
 

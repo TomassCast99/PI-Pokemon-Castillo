@@ -26,6 +26,8 @@ export default function Home() {
   const [pokesPerPage] = useState(12);
   const [range, setRange] = useState({ first: 0, last: 12 });
 
+  const [origin, setOrigin] = useState("All");
+
   const [act, setAct] = useState("");
   const [types, setTypes] = useState("All");
 
@@ -69,6 +71,7 @@ export default function Home() {
   function handleClick(e) {
     setTypes("All Pokes");
     setStrength("asc");
+    setOrigin("All");
     dispatch(getPokes());
   }
 
@@ -76,7 +79,7 @@ export default function Home() {
     e.preventDefault();
     dispatch(handleFilter(e.target.value));
     setCurrentPage(1);
-    setAct(`${e.target.value}`);
+    setOrigin({ origin });
   }
 
   function HandleFilterByStrength(e) {
@@ -127,6 +130,7 @@ export default function Home() {
           <div>
             <select
               className="name-filt"
+              value={origin}
               onChange={(e) => handleClickFilter(e)}
             >
               <option key="All" className="nav-links" value="All">
