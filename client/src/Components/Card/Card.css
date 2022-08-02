@@ -2,15 +2,15 @@
     width: 190px;
     height: 254px;
     border-radius: 20px;
-    background: #747474a4;
+    background: #DAA520;
     position: relative;
     padding: 1.8rem;
-    border: 2px solid #272727;
+    border: 5px solid #272727;
     transition: 0.5s ease-out;
     overflow: visible;
     font-family: 'TTVTechPrecomput', sans-serif;
     font-size: 30px;
-    margin: 10px;
+    margin: 15px 10px;
    }
    
    .card-details {
@@ -35,8 +35,8 @@
     transform: translate(-50%, 125%);
     width: 60%;
     border-radius: 1rem;
-    border: none;
-    background-color: #eb5e28;
+    border: 5px solid #0000CD;
+    background-color: #DAA520;
     color: #fff;
     font-size: 1rem;
     padding: .5rem 1rem;
@@ -45,27 +45,30 @@
     bottom: 0;
     opacity: 0;
     transition: 0.3s ease-out;
+    cursor: pointer;
    }
 
    
    .text-body {
-    color: rgba(222, 218, 218, 0.767);
+    color: #252422;
    }
    
    /*Text*/
    .text-title {
     font-size: 30px;
     font-weight: bold;
-    color: rgba(222, 218, 218, 0.767)
+    color: #252422
    }
    
    /*Hover*/
    .card:hover {
-    border-color: #eb5e28;
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    border-color: #0000CD;
+    box-shadow: 0px 3px 20px 0px black;
    }
    
    .card:hover .card-button {
+    font-family: 'TTVTechPrecomput', sans-serif;
+    font-size: 30px;
     transform: translate(-50%, 50%);
     opacity: 1;
    }

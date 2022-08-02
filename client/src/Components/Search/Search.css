@@ -1,5 +1,6 @@
 .group {
     position: relative;
+    color: #dfdfdf;
    }
    
    .input {
@@ -11,7 +12,7 @@
     border: none;
     border-bottom: 1px solid #515151;
     background: transparent;
-    color: #ccc5b9;
+    color: #dfdfdf;
    }
    
    .input:focus {
@@ -30,7 +31,7 @@
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #eb5e28;
+    background: #FFD700;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -64,7 +65,7 @@
    
    @keyframes inputHighlighter {
     from {
-     background: #eb5e28;
+     background: #FFD700;
     }
    
     to {

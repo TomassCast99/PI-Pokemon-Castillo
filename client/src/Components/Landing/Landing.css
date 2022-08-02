@@ -2,9 +2,10 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    background-image: url(pokeLand2.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;  
     height: 100vh;
     text-shadow: rgb(26, 25, 25) 0.1em 0.1em 0.2em;
     font-size: 50px;
@@ -17,17 +18,18 @@
 
 .tittle{
     font-family: 'TTVTechPrecomput', sans-serif; 
-    color: #d45929;;
+    color: #252422;
 }
 
 .content{
     font-family: 'TTVTechPrecomput', sans-serif;
-    color: #d45929;;
+    color: #252422;
+    padding: 2rem;
 }
 
 .btn-land{
         border-radius: 35px;
-        border-color: #403d39;
+        border: 5px solid #00008B;
         list-style: none;
         color:#252422;
         font-family: 'TTVTechPrecomput', sans-serif;
@@ -39,10 +41,9 @@
         white-space: nowrap; 
         padding: 8px 20px;
         outline: none;
-        border: none;
         cursor: pointer;
         font-size: 40px;
-        background-color: #eb5e28;
+        background-color: #FFD700;
     }
 
 
@@ -59,10 +60,12 @@
     }
 
 .btn-land:hover {
-        border-color: #252422;
+        border-color: #0000CD;
         box-shadow: 0px 3px 20px 0px black;
         transform: scale(1.2);
-        background-color: #eb5e28;
-        color:#e5e5e5;
+        background-color: #FFD700;
+        color:#252422;
         transition: all 0.3 ease-out;
 }
+
+

@@ -33,35 +33,59 @@ justify-content: center;
 .home-container{
     font-family: 'TTVTechPrecomput', sans-serif;
     font-size: 30px;
+    background-color: #0000CD;
+    background-image: url(./pokeHome.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
-    height: 170vh;
+    background-size: cover;  
+    height: 150vh;
 }
 
 .home-btn{
+    border-radius: 35px;
+    border: 5px solid #00008B;
+    list-style: none;
+    color:#252422;
     font-family: 'TTVTechPrecomput', sans-serif;
-        background-color: transparent;
-        border: 2px solid #eb5e28;
-        color:#e5e5e5;
-        padding: 8px 20px;
-        border-radius: 15px;
-        outline: none;
-        cursor: pointer;
-        font-size: 30px;
+    font-weight: bold;
+    padding: 12px 16px;
+    margin: 0 8px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap; 
+    padding: 8px 20px;
+    outline: none;
+    cursor: pointer;
+    font-size: 40px;
+    background-color: #FFD700;
     
     }
 
+    .home-btn::before {
+        content: " ";
+        position: absolute;
+        border-radius: 35px;
+        top: 0;
+        left:0;
+        height:100%;
+        width: 100%;
+        z-index:-1;
+        transition: .2s;
+    }
+
 .home-btn:hover {
-    background-color: #eb5e28;
-    color:#e5e5e5;
-    transition: all 0.3 ease-out;
+        border-color: #0000CD;
+        box-shadow: 0px 3px 20px 0px black;
+        transform: scale(1.2);
+        background-color: #FFD700;
+        color:#252422;
+        transition: all 0.3 ease-out;
 }
 
 .btn-filtros{
     font-size: 30px;
     background-color: transparent;
-    border: 2px solid #eb5e28;
+    border: 3px solid #0000CD;
     color:#e5e5e5;
     padding: 8px 20px;
     border-radius: 15px;
@@ -71,7 +95,7 @@ justify-content: center;
 }
 
 .btn-filtros:hover {
-background-color: #eb5e28;
+background-color: #FFD700;
 color:#e5e5e5;
 transition: all 0.3 ease-out;
 }
@@ -79,22 +103,23 @@ transition: all 0.3 ease-out;
 .name-filt{
     color: #e5e5e5;
     background: #747474a4;;
-    border: 2px solid #eb5e28;
+    border: 3px solid #0000CD;
     border-radius: 15px;
     font-family: 'TTVTechPrecomput', sans-serif;
     font-size: 30px;
+    padding: 10px ;
 }
 
 .div-not-found{
-    border: 2px solid #eb5e28;
+    border: 3px solid #0000CD;
     border-radius: 35px;
-    width: 250px;
-    height: 150px;
+    width: 400px;
+    height: 300px;
     margin: 30px;
     background-color: rgba(201, 192, 192, 0.856);
     text-align: center;
     font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
     flex-direction: column;
     align-content: center;

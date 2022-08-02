@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     gap: 60px;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
 }
 
 .paginated li {
@@ -15,17 +15,19 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  background: #07182E;
-  border: 2px solid rgb(0, 183, 255);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  color: transparent;
+  background: url(./pokeCerrada4.png);
+  background-size: cover;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 
 .paginated .active {
-  border: 2px solid rgb(255, 48, 255);
-  box-shadow: 10px 10px 15px #191919;
-  
+  background: url(./pokeAbierta4.png);
+  background-size: cover;
+  color: #fff;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
 }

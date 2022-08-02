@@ -1,11 +1,12 @@
 .formPerfil{
+      background-image: url(./pokeCreate.jpg);
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover; 
+      background-size: cover;  
       height: 100vh;
       font-family: 'TTVTechPrecomput', sans-serif;
       font-size: 30px;
-      color: #d45929;
+      color: #343a40;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -13,12 +14,12 @@
   }
 
   .form{
-      padding: 0.5 rem;
+      padding: 0.5rem;
       display:flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      border: 2px solid #eb5e28;
+      border: 3px solid #FFD700;
       border-radius: 35px;
       width: 900px;
       height: 600px;
@@ -31,7 +32,9 @@
     .titleForm{
     display: flex;
     justify-content: center;
-    font-size: 45px;
+    font-size: 70px;
+    color:  #1a1b1b;
+    font-weight: bold;
     }
     
   
@@ -40,25 +43,44 @@
     }
     
     .boton{
-      font-family: 'TTVTechPrecomput', sans-serif;
       padding: 8px 20px;
+      border-radius: 35px;
+      border: 5px solid #00008B;
+      list-style: none;
+      color:#252422;
+      font-family: 'TTVTechPrecomput', sans-serif;
+      font-weight: bold;
+      
+      margin: 0 8px;
+      cursor: pointer;
+      white-space: nowrap; 
+      
       outline: none;
       cursor: pointer;
-      font-size: 30px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: transparent;
-      border: 2px solid #eb5e28;
-      color:#e5e5e5;
-      border-radius: 15px;
-    }
-    
-    .boton:hover{
-      background-color: #eb5e28;
-      color:#e5e5e5;
-      transition: all 0.3 ease-out;
-    }
+      font-size: 40px;
+      background-color: #FFD700;
+      
+}
+      .boton::before {
+          content: " ";
+          
+          border-radius: 35px;
+          top: 0;
+          left:0;
+          height:100%;
+          width: 100%;
+          z-index:-1;
+          transition: .2s;
+      }
+  
+  .boton:hover {
+          border-color: #0000CD;
+          box-shadow: 0px 3px 20px 0px black;
+          transform: scale(1.2);
+          background-color: #FFD700;
+          color:#252422;
+          transition: all 0.3 ease-out;
+  }
   
     .types{
       display: flex;
@@ -83,7 +105,7 @@
     
     .choosed::-webkit-scrollbar {
       width: 1rem;
-      background-color: #eb5e28;
+      background-color: #FFD700;
     }
   
     .choosed::-webkit-scrollbar-thumb {
@@ -120,7 +142,7 @@
   }
   
   .cross:hover{
-    color:#eb5e28;
+    color:#FFD700;
     transition: all 0.3 ease-out;
   }
   
@@ -146,7 +168,7 @@
     outline: none;
     border: none;
     cursor: pointer;
-    background-color: #eb5e28;
+    background-color: #FFD700;
   }
   
   
@@ -166,7 +188,7 @@
     border-color: #252422;
     box-shadow: 0px 3px 20px 0px black;
     transform: scale(1.2);
-    background-color: #eb5e28;
-    color:#e5e5e5;
+    background-color: #FFD700;
+    color:#252422;
     transition: all 0.3 ease-out;
   }
