@@ -24,7 +24,7 @@ export default function reducer(state = initialState, { type, payload }) {
       let nombres =
         payload === ""
           ? state.pokemons2
-          : state.pokemons2.filter((e) =>
+          : state.pokemons.filter((e) =>
               e.name.toLowerCase().includes(payload.toLowerCase())
             );
       return {

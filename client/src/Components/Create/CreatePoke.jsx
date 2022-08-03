@@ -89,9 +89,18 @@ export default function CreatePoke() {
         img: "",
         createdDB: false,
       });
-    } else {
+    } else if (
+      !input.name.length ||
+      !input.hp.length ||
+      !input.strength.length ||
+      !input.defense.length ||
+      !input.height.length ||
+      !input.speed.length ||
+      !input.weight.length ||
+      !input.types.length
+    ) {
       setErr(true);
-      setTimeout(() => setResponse(false), 4000);
+      setTimeout(() => setErr(false), 4000);
     }
   }
 
@@ -150,7 +159,7 @@ export default function CreatePoke() {
       </div>
 
       <form key="form4" className="form" onSubmit={resState}>
-        <div>
+        <div key="name8">
           <label key="name" className="title5">
             Name:
           </label>
@@ -165,7 +174,7 @@ export default function CreatePoke() {
 
           <strong>{errors.name}</strong>
         </div>
-        <div>
+        <div key="strength8">
           <label key="Strength" className="title5">
             Strength:
           </label>
@@ -181,7 +190,7 @@ export default function CreatePoke() {
           <strong>{errors.strength}</strong>
         </div>
 
-        <div>
+        <div key="defense8">
           <label key="defense" className="title5">
             Defense:
           </label>
@@ -197,7 +206,7 @@ export default function CreatePoke() {
           <strong>{errors.defense}</strong>
         </div>
 
-        <div>
+        <div key="img8">
           <label key="image" name="img" className="title5">
             Image:
           </label>
@@ -209,7 +218,7 @@ export default function CreatePoke() {
             onChange={(e) => handelChange(e)}
           ></input>
         </div>
-        <div>
+        <div key="hp8">
           <label key="hp2" className="title5">
             HP:
           </label>
@@ -224,7 +233,7 @@ export default function CreatePoke() {
 
           <strong>{errors.hp}</strong>
         </div>
-        <div>
+        <div key="height8">
           <label key="height2" className="title5">
             Height:
           </label>
@@ -239,7 +248,7 @@ export default function CreatePoke() {
 
           <strong>{errors.height}</strong>
         </div>
-        <div>
+        <div key="weight8">
           <label key="weight2" className="title5">
             Weight:
           </label>
@@ -254,7 +263,7 @@ export default function CreatePoke() {
 
           <strong>{errors.weight}</strong>
         </div>
-        <div>
+        <div key="speed8">
           <label key="speed2" className="title5">
             Speed:
           </label>
@@ -269,7 +278,7 @@ export default function CreatePoke() {
 
           <strong>{errors.speed}</strong>
         </div>
-        <div>
+        <div key="types8">
           <label key="types" className="title5" value="types6" name="types7">
             {" "}
             Types:{" "}
@@ -282,14 +291,14 @@ export default function CreatePoke() {
             {allTypes &&
               allTypes
                 .sort((a, b) => (a.name > b.name ? 1 : -1))
-                .map((e) => (
-                  <option key={e.id} value={e.name}>
+                .map((e, i) => (
+                  <option key={i} value={e.name}>
                     {e.name.toUpperCase()}
                   </option>
                 ))}
           </select>
 
-          <div className="choosed">
+          <div key="choosed8" className="choosed">
             {!input.types.length ? (
               <strong>{errors.types}</strong>
             ) : (
@@ -313,7 +322,7 @@ export default function CreatePoke() {
             )}
           </div>
         </div>
-        <div>
+        <div key="button8">
           <button
             key="submit"
             className="btn-createPoke"
