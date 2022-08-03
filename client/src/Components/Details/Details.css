@@ -12,6 +12,7 @@
 
 .imagdetalle{
     border-radius: 35px;
+    background-color: rgba(201, 192, 192, 0.637);
     border:5px solid #FFD700;
     margin: 50px;
     width: 600px;

@@ -7,7 +7,7 @@ const getApiTypes = async () => {
     if (!tipos.length) {
       let url = `https://pokeapi.co/api/v2/type`;
       tipos = await axios.get(url);
-      tipos = tipos.data.map((result) => ({
+      tipos = tipos.data.results.map((result) => ({
         name: result.name,
       }));
       await Type.bulkCreate(tipos);

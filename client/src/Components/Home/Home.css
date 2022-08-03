@@ -43,7 +43,7 @@ justify-content: center;
 
 .home-btn{
     border-radius: 35px;
-    border: 5px solid #00008B;
+    border: 5px solid #272727;
     list-style: none;
     color:#252422;
     font-family: 'TTVTechPrecomput', sans-serif;
@@ -82,28 +82,10 @@ justify-content: center;
         transition: all 0.3 ease-out;
 }
 
-.btn-filtros{
-    font-size: 30px;
-    background-color: transparent;
-    border: 3px solid #0000CD;
-    color:#e5e5e5;
-    padding: 8px 20px;
-    border-radius: 15px;
-    outline: none;
-    cursor: pointer;
-
-}
-
-.btn-filtros:hover {
-background-color: #FFD700;
-color:#e5e5e5;
-transition: all 0.3 ease-out;
-}
-
 .name-filt{
     color: #e5e5e5;
     background: #747474a4;;
-    border: 3px solid #0000CD;
+    border: 3px solid #272727;
     border-radius: 15px;
     font-family: 'TTVTechPrecomput', sans-serif;
     font-size: 30px;

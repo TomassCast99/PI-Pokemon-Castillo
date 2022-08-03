@@ -91,7 +91,7 @@ export default function CreatePoke() {
       });
     } else {
       setErr(true);
-      //setLoading(false);
+      setTimeout(() => setResponse(false), 4000);
     }
   }
 

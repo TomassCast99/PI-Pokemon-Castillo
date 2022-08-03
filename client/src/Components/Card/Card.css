@@ -2,7 +2,7 @@
     width: 190px;
     height: 254px;
     border-radius: 20px;
-    background: #DAA520;
+    background: #e1c443;
     position: relative;
     padding: 1.8rem;
     border: 5px solid #272727;
@@ -35,9 +35,8 @@
     transform: translate(-50%, 125%);
     width: 60%;
     border-radius: 1rem;
-    border: 5px solid #0000CD;
-    background-color: #DAA520;
-    color: #fff;
+    background-color: #272727;
+    color: #e1c443;
     font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
@@ -62,7 +61,6 @@
    
    /*Hover*/
    .card:hover {
-    border-color: #0000CD;
     box-shadow: 0px 3px 20px 0px black;
    }
    
