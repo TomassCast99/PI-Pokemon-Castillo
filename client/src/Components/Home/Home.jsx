@@ -71,6 +71,10 @@ export default function Home() {
     setTypes("All Pokes");
     setStrength("asc");
     setOrigin("allPoke");
+    setCharge(true);
+    setTimeout(() => {
+      setCharge(false);
+    }, 7000);
     dispatch(getPokes());
   }
 
@@ -128,7 +132,9 @@ export default function Home() {
                 Z-A
               </option>
             </select>
-            <button onClick={(e) => handleClickName(e)}>Order</button>
+            <button className="btn-final" onClick={(e) => handleClickName(e)}>
+              Order
+            </button>
           </div>
 
           <div>
@@ -151,6 +157,7 @@ export default function Home() {
               onClick={(e) => {
                 handleClickFilter(e);
               }}
+              className="btn-final"
             >
               Filter
             </button>
@@ -175,6 +182,7 @@ export default function Home() {
               onClick={(e) => {
                 HandleFilterByStrength(e);
               }}
+              className="btn-final"
             >
               Order
             </button>
