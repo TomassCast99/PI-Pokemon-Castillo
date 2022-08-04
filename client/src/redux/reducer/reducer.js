@@ -55,20 +55,20 @@ export default function reducer(state = initialState, { type, payload }) {
       if (payload === "asc") {
         sortAlf = state.pokemons2.sort((a, b) => {
           if (a.name.charAt(0) > b.name.charAt(0)) {
-            return -1;
+            return 1;
           }
           if (a.name.charAt(0) < b.name.charAt(0)) {
-            return 1;
+            return -1;
           }
           return 0;
         });
       } else if (payload === "desc") {
         sortAlf = state.pokemons2.sort((a, b) => {
           if (a.name.charAt(0) > b.name.charAt(0)) {
-            return 1;
+            return -1;
           }
           if (a.name.charAt(0) < b.name.charAt(0)) {
-            return -1;
+            return 1;
           }
           return 0;
         });
@@ -83,6 +83,13 @@ export default function reducer(state = initialState, { type, payload }) {
     case "HANDLE_FILTERS":
       let pokemons3 = state.pokemons2;
       let origin = payload;
+
+      if (origin === "allPoke") {
+        return {
+          ...state,
+          pokemons: pokemons3,
+        };
+      }
 
       if (origin === "apiPoke") {
         pokemons3 = pokemons3.filter((pokemon) => !pokemon.createdDB);
@@ -102,19 +109,19 @@ export default function reducer(state = initialState, { type, payload }) {
         payload === "asc"
           ? state.pokemons2.sort(function (a, b) {
               if (a.strength > b.strength) {
-                return 1;
+                return -1;
               }
               if (b.strength > a.strength) {
-                return -1;
+                return 1;
               }
               return 0;
             })
           : state.pokemons2.sort(function (a, b) {
               if (a.strength > b.strength) {
-                return -1;
+                return 1;
               }
               if (b.strength > a.strength) {
-                return 1;
+                return -1;
               }
               return 0;
             });

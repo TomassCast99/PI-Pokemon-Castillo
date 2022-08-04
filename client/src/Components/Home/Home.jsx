@@ -26,7 +26,7 @@ export default function Home() {
   const [pokesPerPage] = useState(12);
   const [range, setRange] = useState({ first: 0, last: 12 });
 
-  const [origin, setOrigin] = useState("All");
+  const [origin, setOrigin] = useState("allPoke");
 
   const [act, setAct] = useState("");
   const [types, setTypes] = useState("All");
@@ -64,22 +64,21 @@ export default function Home() {
     dispatch(handlerName(name));
     setCurrentPage(1);
     setCurrentPokes(usePoke?.slice(range.first, range.last));
-    setName(e.target.value);
     setAct(`${name}`);
   }
 
   function handleClick(e) {
     setTypes("All Pokes");
     setStrength("asc");
-    setOrigin("All");
+    setOrigin("allPoke");
     dispatch(getPokes());
   }
 
   function handleClickFilter(e) {
     e.preventDefault();
-    dispatch(handleFilter(e.target.value));
+    dispatch(handleFilter(origin));
     setCurrentPage(1);
-    setOrigin({ origin });
+    setAct(`${e.target.value}`);
   }
 
   function HandleFilterByStrength(e) {
@@ -87,7 +86,6 @@ export default function Home() {
     dispatch(handlerStrength(strength));
     setCurrentPage(1);
     setCurrentPokes(usePoke?.slice(range.first, range.last));
-    setStrength(e.target.value);
     setAct(`${e.target.value}`);
   }
 
@@ -117,7 +115,12 @@ export default function Home() {
         </div>
         <div className="div-filt">
           <div>
-            <select className="name-filt" onChange={(e) => handleClickName(e)}>
+            <select
+              className="name-filt"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            >
               <option key="asc" className="nav-links" value="asc">
                 A-Z
               </option>
@@ -125,15 +128,16 @@ export default function Home() {
                 Z-A
               </option>
             </select>
+            <button onClick={(e) => handleClickName(e)}>Order</button>
           </div>
 
           <div>
             <select
               className="name-filt"
               value={origin}
-              onChange={(e) => handleClickFilter(e)}
+              onChange={(e) => setOrigin(e.target.value)}
             >
-              <option key="All" className="nav-links" value="All">
+              <option key="allPoke" className="nav-links" value="allPoke">
                 All
               </option>
               <option key="apiPok" className="nav-links" value="apiPoke">
@@ -143,6 +147,13 @@ export default function Home() {
                 Created Pokémon
               </option>
             </select>
+            <button
+              onClick={(e) => {
+                handleClickFilter(e);
+              }}
+            >
+              Filter
+            </button>
           </div>
 
           <div className="box">
@@ -150,7 +161,7 @@ export default function Home() {
               value={strength}
               className="name-filt"
               onChange={(e) => {
-                HandleFilterByStrength(e);
+                setStrength(e.target.value);
               }}
             >
               <option key="asc" value="asc">
@@ -160,6 +171,13 @@ export default function Home() {
                 Low Strength
               </option>
             </select>
+            <button
+              onClick={(e) => {
+                HandleFilterByStrength(e);
+              }}
+            >
+              Order
+            </button>
           </div>
 
           <div className="box">
@@ -198,7 +216,7 @@ export default function Home() {
         </div>
         <Paginated
           pokesPerPage={pokesPerPage}
-          usePoke={usePoke.length}
+          usePoke={usePoke?.length}
           paginated={paginado}
           currentPage={currentPage}
         />
